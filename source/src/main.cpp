@@ -1,3 +1,4 @@
+#include <chrono>
 #include <iostream>
 #include <glm/glm.hpp>
 #include "thread_pool.hpp"
@@ -17,7 +18,10 @@ int main() {
             film.setPixel(j, i, {0.5, 0.7, 0.2});
         }
     }
+    auto now = std::chrono::high_resolution_clock::now();
     film.save("test.ppm");
+    auto time = std::chrono::high_resolution_clock::now() - now;
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(time);
     ThreadPool thread_pool {};
     thread_pool.addTask(new SimpleTask());
     thread_pool.addTask(new SimpleTask());
