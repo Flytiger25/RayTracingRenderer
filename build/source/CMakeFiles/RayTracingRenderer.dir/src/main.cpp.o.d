@@ -1173,7 +1173,6 @@ source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o: \
   /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/integer.hpp \
   /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/detail/func_integer.inl \
   /Users/flytiger25/work/RayTracingRenderer/source/include/thread_pool.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/thread \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__thread/formatter.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__thread/jthread.h \
@@ -1186,6 +1185,7 @@ source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__thread/thread.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__thread/this_thread.h \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/spin_lock.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/film.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__filesystem/copy_options.h \

@@ -1,9 +1,12 @@
 #pragma once
 
-#include <list>
+#include <functional>
+//#include <list>
+#include <queue>
 #include <vector>
 #include <thread>
-#include <mutex>
+//#include <mutex>
+#include "spin_lock.hpp"
 
 class Task {
 public:
@@ -16,12 +19,17 @@ public:
     ThreadPool(int thread_count = 0);
     ~ThreadPool();
 
+    void parallel_for(int width, int height, const std::function<void(int, int)> &lambda);
+    void wait() const; // 让主线程主动等待所有任务完成
+
     void addTask(Task *task);
     Task* getTask();
 
 private:
-    bool alive;
+    std::atomic<int> alive;
+    std::atomic<int> pending_task_count;
     std::vector<std::thread> threads;
-    std::list<Task *> tasks;
-    std::mutex lock;
+    std::queue<Task *> tasks;
+    //std::mutex lock;
+    Spinlock spin_lock {};
 };

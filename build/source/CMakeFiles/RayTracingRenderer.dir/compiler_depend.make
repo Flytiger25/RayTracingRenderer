@@ -3218,7 +3218,6 @@ source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o: /Users/flytiger25/work/
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iterator \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/limits \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/locale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/locale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/math.h \
@@ -3390,6 +3389,7 @@ source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o: /Users/flytiger25/work/
   /Users/flytiger25/work/RayTracingRenderer/source/include/ray.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/shape.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/sphere.hpp \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/spin_lock.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/thread_pool.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/triangle.hpp \
   /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/common.hpp \
@@ -6718,7 +6718,6 @@ source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o: /Users/flytiger2
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iterator \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/limits \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/locale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/locale.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/math.h \
@@ -6883,6 +6882,7 @@ source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o: /Users/flytiger2
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/xlocale/_time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/xlocale/_wchar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/xlocale/_wctype.h \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/spin_lock.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/thread_pool.hpp
 
 source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o: /Users/flytiger25/work/RayTracingRenderer/source/src/triangle.cpp \
@@ -9643,6 +9643,8 @@ source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o: /Users/flytiger25/w
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_transform.h:
 
+/Users/flytiger25/work/RayTracingRenderer/source/include/spin_lock.hpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_move_backward.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_upper_bound.h:
@@ -9702,8 +9704,6 @@ source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o: /Users/flytiger25/w
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_replace.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__bit/endian.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/list:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/max_element.h:
 
