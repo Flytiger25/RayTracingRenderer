@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o"
+  "CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o.d"
   "CMakeFiles/RayTracingRenderer.dir/src/film.cpp.o"
   "CMakeFiles/RayTracingRenderer.dir/src/film.cpp.o.d"
   "CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o"
   "CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o.d"
+  "CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o"
+  "CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o.d"
   "CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o"
   "CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o.d"
   "RayTracingRenderer"

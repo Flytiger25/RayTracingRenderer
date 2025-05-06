@@ -4,8 +4,10 @@
 # source at source/CMakeLists.txt:3 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/flytiger25/work/RayTracingRenderer/source/src/*.cpp")
 set(OLD_GLOB
+  "/Users/flytiger25/work/RayTracingRenderer/source/src/camera.cpp"
   "/Users/flytiger25/work/RayTracingRenderer/source/src/film.cpp"
   "/Users/flytiger25/work/RayTracingRenderer/source/src/main.cpp"
+  "/Users/flytiger25/work/RayTracingRenderer/source/src/sphere.cpp"
   "/Users/flytiger25/work/RayTracingRenderer/source/src/thread_pool.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

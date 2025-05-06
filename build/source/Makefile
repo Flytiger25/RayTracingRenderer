@@ -138,6 +138,30 @@ RayTracingRenderer/fast:
 	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/build
 .PHONY : RayTracingRenderer/fast
 
+src/camera.o: src/camera.cpp.o
+.PHONY : src/camera.o
+
+# target to build an object file
+src/camera.cpp.o:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o
+.PHONY : src/camera.cpp.o
+
+src/camera.i: src/camera.cpp.i
+.PHONY : src/camera.i
+
+# target to preprocess a source file
+src/camera.cpp.i:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.i
+.PHONY : src/camera.cpp.i
+
+src/camera.s: src/camera.cpp.s
+.PHONY : src/camera.s
+
+# target to generate assembly for a file
+src/camera.cpp.s:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.s
+.PHONY : src/camera.cpp.s
+
 src/film.o: src/film.cpp.o
 .PHONY : src/film.o
 
@@ -186,6 +210,30 @@ src/main.cpp.s:
 	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/sphere.o: src/sphere.cpp.o
+.PHONY : src/sphere.o
+
+# target to build an object file
+src/sphere.cpp.o:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o
+.PHONY : src/sphere.cpp.o
+
+src/sphere.i: src/sphere.cpp.i
+.PHONY : src/sphere.i
+
+# target to preprocess a source file
+src/sphere.cpp.i:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.i
+.PHONY : src/sphere.cpp.i
+
+src/sphere.s: src/sphere.cpp.s
+.PHONY : src/sphere.s
+
+# target to generate assembly for a file
+src/sphere.cpp.s:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.s
+.PHONY : src/sphere.cpp.s
+
 src/thread_pool.o: src/thread_pool.cpp.o
 .PHONY : src/thread_pool.o
 
@@ -220,12 +268,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RayTracingRenderer"
+	@echo "... src/camera.o"
+	@echo "... src/camera.i"
+	@echo "... src/camera.s"
 	@echo "... src/film.o"
 	@echo "... src/film.i"
 	@echo "... src/film.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sphere.o"
+	@echo "... src/sphere.i"
+	@echo "... src/sphere.s"
 	@echo "... src/thread_pool.o"
 	@echo "... src/thread_pool.i"
 	@echo "... src/thread_pool.s"

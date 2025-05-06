@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/flytiger25/work/RayTracingRenderer/source/src/camera.cpp" "source/CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o" "gcc" "source/CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o.d"
   "/Users/flytiger25/work/RayTracingRenderer/source/src/film.cpp" "source/CMakeFiles/RayTracingRenderer.dir/src/film.cpp.o" "gcc" "source/CMakeFiles/RayTracingRenderer.dir/src/film.cpp.o.d"
   "/Users/flytiger25/work/RayTracingRenderer/source/src/main.cpp" "source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o" "gcc" "source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o.d"
+  "/Users/flytiger25/work/RayTracingRenderer/source/src/sphere.cpp" "source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o" "gcc" "source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o.d"
   "/Users/flytiger25/work/RayTracingRenderer/source/src/thread_pool.cpp" "source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o" "gcc" "source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o.d"
   )
 
