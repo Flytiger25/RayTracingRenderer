@@ -114,10 +114,24 @@ source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RayTracingRenderer.dir/src/main.cpp.s"
 	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/flytiger25/work/RayTracingRenderer/source/src/main.cpp -o CMakeFiles/RayTracingRenderer.dir/src/main.cpp.s
 
+source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/flags.make
+source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o: /Users/flytiger25/work/RayTracingRenderer/source/src/model.cpp
+source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o"
+	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o -MF CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o.d -o CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o -c /Users/flytiger25/work/RayTracingRenderer/source/src/model.cpp
+
+source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RayTracingRenderer.dir/src/model.cpp.i"
+	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/flytiger25/work/RayTracingRenderer/source/src/model.cpp > CMakeFiles/RayTracingRenderer.dir/src/model.cpp.i
+
+source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RayTracingRenderer.dir/src/model.cpp.s"
+	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/flytiger25/work/RayTracingRenderer/source/src/model.cpp -o CMakeFiles/RayTracingRenderer.dir/src/model.cpp.s
+
 source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/flags.make
 source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o: /Users/flytiger25/work/RayTracingRenderer/source/src/sphere.cpp
 source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o"
 	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o -MF CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o.d -o CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o -c /Users/flytiger25/work/RayTracingRenderer/source/src/sphere.cpp
 
 source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.i: cmake_force
@@ -131,7 +145,7 @@ source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.s: cmake_force
 source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/flags.make
 source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o: /Users/flytiger25/work/RayTracingRenderer/source/src/thread_pool.cpp
 source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o"
 	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o -MF CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o.d -o CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o -c /Users/flytiger25/work/RayTracingRenderer/source/src/thread_pool.cpp
 
 source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.i: cmake_force
@@ -142,13 +156,29 @@ source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.s"
 	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/flytiger25/work/RayTracingRenderer/source/src/thread_pool.cpp -o CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.s
 
+source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/flags.make
+source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o: /Users/flytiger25/work/RayTracingRenderer/source/src/triangle.cpp
+source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o: source/CMakeFiles/RayTracingRenderer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o"
+	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o -MF CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o.d -o CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o -c /Users/flytiger25/work/RayTracingRenderer/source/src/triangle.cpp
+
+source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.i"
+	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/flytiger25/work/RayTracingRenderer/source/src/triangle.cpp > CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.i
+
+source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.s"
+	cd /Users/flytiger25/work/RayTracingRenderer/build/source && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/flytiger25/work/RayTracingRenderer/source/src/triangle.cpp -o CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.s
+
 # Object files for target RayTracingRenderer
 RayTracingRenderer_OBJECTS = \
 "CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o" \
 "CMakeFiles/RayTracingRenderer.dir/src/film.cpp.o" \
 "CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o" \
+"CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o" \
 "CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o" \
-"CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o"
+"CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o" \
+"CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o"
 
 # External object files for target RayTracingRenderer
 RayTracingRenderer_EXTERNAL_OBJECTS =
@@ -156,12 +186,14 @@ RayTracingRenderer_EXTERNAL_OBJECTS =
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/camera.cpp.o
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/film.cpp.o
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o
+source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.o
+source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/build.make
 source/RayTracingRenderer: thirdparty/glm/glm/libglm.a
 source/RayTracingRenderer: source/CMakeFiles/RayTracingRenderer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable RayTracingRenderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/flytiger25/work/RayTracingRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable RayTracingRenderer"
 	cd /Users/flytiger25/work/RayTracingRenderer/build/source && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RayTracingRenderer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1127,4 +1127,5 @@ source/CMakeFiles/RayTracingRenderer.dir/src/sphere.cpp.o: \
   /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/matrix.hpp \
   /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/vector_relational.hpp \
   /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/integer.hpp \
-  /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/detail/func_integer.inl
+  /Users/flytiger25/work/RayTracingRenderer/thirdparty/glm/glm/detail/func_integer.inl \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/shape.hpp

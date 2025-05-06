@@ -5,6 +5,7 @@
 #include "film.hpp"
 #include "camera.hpp"
 #include "sphere.hpp"
+#include "model.hpp"
 
 class SimpleTask : public Task {
 public:
@@ -14,22 +15,29 @@ public:
 };
 
 int main() {
-    Film film {1920, 1080};
-    Camera camera {film, {0, 0, 1}, {0, 0, 0}, 90};
+
+    std::atomic<int> count = 0;
+
+    Film film {192, 108};
+    Camera camera {film, {-0.6, 0, 0}, {0, 0, 0}, 90};
+    Model model ("models/simple_dragon.obj");
     Sphere sphere {{0, 0, 0}, 0.5f};
-    glm::vec3 light_pos {1, 1, 1};
+    Shape &shape = model;
+    glm::vec3 light_pos {-1, 2, 1};
 
     for (int i = 0; i < film.getWidth(); i++) {
         for (int j = 0; j < film.getHeight(); j++) {
             auto ray = camera.generateRay({i, j});
-            auto result = sphere.intersect(ray);
-            if (result) {
-                auto hit_point = ray.hit(result.value());
-                auto normal = glm::normalize(hit_point - sphere.center);
-                auto light_direction = glm::normalize(light_pos - hit_point);
-                float cosine = glm::max(0.f, glm::dot(normal, light_direction));
+            auto hit_info = shape.intersect(ray);
+            if (hit_info) {
+                auto light_direction = glm::normalize(light_pos - hit_info->hit_point);
+                float cosine = glm::max(0.f, glm::dot(hit_info->normal, light_direction));
 
                 film.setPixel(i, j, {cosine, cosine, cosine});
+            }
+            count++;
+            if (count % film.getWidth() == 0) {
+                std::cout << static_cast<float>(count) / (film.getWidth() * film.getHeight()) << std::endl;
             }
         }
     }

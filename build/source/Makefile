@@ -210,6 +210,30 @@ src/main.cpp.s:
 	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/model.o: src/model.cpp.o
+.PHONY : src/model.o
+
+# target to build an object file
+src/model.cpp.o:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.o
+.PHONY : src/model.cpp.o
+
+src/model.i: src/model.cpp.i
+.PHONY : src/model.i
+
+# target to preprocess a source file
+src/model.cpp.i:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.i
+.PHONY : src/model.cpp.i
+
+src/model.s: src/model.cpp.s
+.PHONY : src/model.s
+
+# target to generate assembly for a file
+src/model.cpp.s:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/model.cpp.s
+.PHONY : src/model.cpp.s
+
 src/sphere.o: src/sphere.cpp.o
 .PHONY : src/sphere.o
 
@@ -258,6 +282,30 @@ src/thread_pool.cpp.s:
 	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/thread_pool.cpp.s
 .PHONY : src/thread_pool.cpp.s
 
+src/triangle.o: src/triangle.cpp.o
+.PHONY : src/triangle.o
+
+# target to build an object file
+src/triangle.cpp.o:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.o
+.PHONY : src/triangle.cpp.o
+
+src/triangle.i: src/triangle.cpp.i
+.PHONY : src/triangle.i
+
+# target to preprocess a source file
+src/triangle.cpp.i:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.i
+.PHONY : src/triangle.cpp.i
+
+src/triangle.s: src/triangle.cpp.s
+.PHONY : src/triangle.s
+
+# target to generate assembly for a file
+src/triangle.cpp.s:
+	cd /Users/flytiger25/work/RayTracingRenderer/build && $(MAKE) $(MAKESILENT) -f source/CMakeFiles/RayTracingRenderer.dir/build.make source/CMakeFiles/RayTracingRenderer.dir/src/triangle.cpp.s
+.PHONY : src/triangle.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -277,12 +325,18 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/model.o"
+	@echo "... src/model.i"
+	@echo "... src/model.s"
 	@echo "... src/sphere.o"
 	@echo "... src/sphere.i"
 	@echo "... src/sphere.s"
 	@echo "... src/thread_pool.o"
 	@echo "... src/thread_pool.i"
 	@echo "... src/thread_pool.s"
+	@echo "... src/triangle.o"
+	@echo "... src/triangle.i"
+	@echo "... src/triangle.s"
 .PHONY : help
 
 

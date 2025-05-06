@@ -1207,4 +1207,7 @@ source/CMakeFiles/RayTracingRenderer.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Users/flytiger25/work/RayTracingRenderer/source/include/camera.hpp \
   /Users/flytiger25/work/RayTracingRenderer/source/include/ray.hpp \
-  /Users/flytiger25/work/RayTracingRenderer/source/include/sphere.hpp
+  /Users/flytiger25/work/RayTracingRenderer/source/include/sphere.hpp \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/shape.hpp \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/model.hpp \
+  /Users/flytiger25/work/RayTracingRenderer/source/include/triangle.hpp
