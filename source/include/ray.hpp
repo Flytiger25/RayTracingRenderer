@@ -4,9 +4,11 @@
 
 struct Ray {
     glm::vec3 origin;
-    glm::vec3 dirction;
+    glm::vec3 direction;
 
-    glm::vec3 hit(float t) const { return origin + t * dirction; }
+    glm::vec3 hit(float t) const { return origin + t * direction; }
+
+    Ray object_from_world(const glm::mat4 &object_from_world) const;
 };
 
 

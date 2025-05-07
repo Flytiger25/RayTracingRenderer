@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/flytiger25/work/RayTracingRenderer/build/cmake_install.cmake",
+		"/Users/flytiger25/work/RayTracingRenderer/build/thirdparty/glm/cmake_install.cmake",
+		"/Users/flytiger25/work/RayTracingRenderer/build/thirdparty/glm/glm/cmake_install.cmake",
+		"/Users/flytiger25/work/RayTracingRenderer/build/source/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

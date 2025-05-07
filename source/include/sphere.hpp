@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ray.hpp"
 #include "shape.hpp"
 
 struct Sphere : public Shape {
