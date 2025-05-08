@@ -2,6 +2,8 @@
 #include <mutex>
 #include <thread>
 
+ThreadPool thread_pool {};
+
 void ThreadPool::WorkerThread(ThreadPool *master) {
     while (master->alive == 1) {
         Task *task = master->getTask();

@@ -12,6 +12,8 @@
 #include "util/rgb.hpp"
 #include "util/rng.hpp"
 #include "util/progress.hpp"
+#include "renderer/normal_renderer.hpp"
+#include "renderer/simple_rt_renderer.hpp"
 
 class SimpleTask : public Task {
 public:
@@ -22,17 +24,16 @@ public:
 
 int main() {
 
-    ThreadPool thread_pool {};
     std::atomic<int> count = 0;
 
     RNG rng(23451334);
-    int spp = 8;
+    int spp = 128;
 
     Film film {192 * 4, 108 * 4};
     Camera camera {film, {-3.6, 0, 0}, {0, 0, 0}, 45};
     //glm::vec3 light_pos {-1, 2, 1};
 
-    Model model ("models/simple_dragon.obj");
+    Model model ("D:\\work\\RayTracingRenderer\\models\\simple_dragon.obj");
     Sphere sphere {{0, 0, 0}, 1.f};
     Plane plane {{0, 0, 0}, {0, 1, 0}};
 
@@ -43,6 +44,15 @@ int main() {
     scene.add_shape_instance(sphere, {{1, 1, 1}, true}, {3, 0.5, -2});
     scene.add_shape_instance(plane, {RGB(120, 204, 157)}, {0, -0.5, 0});
 
+    NormalRenderer normal_renderer {camera, scene};
+    normal_renderer.render(spp, "D:\\work\\RayTracingRenderer\\normal.ppm");
+
+    film.clear();
+
+    SimpleRTRenderer simple_rt_renderer {camera, scene};
+    simple_rt_renderer.render(spp, "D:\\work\\RayTracingRenderer\\simple_rt.ppm");
+
+/*
     Progress progress(film.getWidth() * film.getHeight() * spp);
 
     thread_pool.parallel_for(film.getWidth(), film.getHeight(), [&](int x, int y) {
@@ -120,12 +130,13 @@ int main() {
     //     }
     // }
 
-    film.save("test.ppm");
+    film.save("D:\\work\\RayTracingRenderer\\test.ppm");
     // auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(time);
     // ThreadPool thread_pool {};
     // thread_pool.addTask(new SimpleTask());
     // thread_pool.addTask(new SimpleTask());
     // thread_pool.addTask(new SimpleTask());
     // thread_pool.addTask(new SimpleTask());
+*/
     return 0;
 }

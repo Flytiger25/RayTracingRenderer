@@ -24,6 +24,8 @@ public:
         pixels[y * width + x].sample_count++; 
     }
 
+    void clear() {pixels.clear(); pixels.resize(width * height);}
+    
 private:
     int width;
     int height;

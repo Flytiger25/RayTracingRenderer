@@ -33,3 +33,5 @@ private:
     //std::mutex lock;
     SpinLock spin_lock {};
 };
+
+extern ThreadPool thread_pool;
