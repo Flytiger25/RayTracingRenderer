@@ -3,7 +3,7 @@
 #include <atomic>
 #include <thread>
 
-class Spinlock {
+class SpinLock {
 public:
     void acquire() {
         while (flag.test_and_set(std::memory_order_acquire)) {
@@ -18,9 +18,9 @@ private:
 
 class Guard {
 public:
-    Guard(Spinlock &spin_lock) : spin_lock(spin_lock) {spin_lock.acquire();}
+    Guard(SpinLock &spin_lock) : spin_lock(spin_lock) {spin_lock.acquire();}
     ~Guard() {spin_lock.release();}
 
 private:
-    Spinlock &spin_lock;
+    SpinLock &spin_lock;
 };

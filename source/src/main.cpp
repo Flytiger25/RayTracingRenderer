@@ -1,16 +1,17 @@
 #include <chrono>
 #include <iostream>
-#include <random>
 #include <glm/glm.hpp>
-#include "thread_pool.hpp"
-#include "film.hpp"
-#include "camera.hpp"
-#include "sphere.hpp"
-#include "model.hpp"
-#include "plane.hpp"
-#include "scene.hpp"
-#include "frame.hpp"
-#include "rgb.hpp"
+#include "thread/thread_pool.hpp"
+#include "camera/film.hpp"
+#include "camera/camera.hpp"
+#include "shape/sphere.hpp"
+#include "shape/model.hpp"
+#include "shape/plane.hpp"
+#include "shape/scene.hpp"
+#include "util/frame.hpp"
+#include "util/rgb.hpp"
+#include "util/rng.hpp"
+#include "util/progress.hpp"
 
 class SimpleTask : public Task {
 public:
@@ -24,8 +25,8 @@ int main() {
     ThreadPool thread_pool {};
     std::atomic<int> count = 0;
 
-    std::mt19937 gen(23451334);
-    std::uniform_real_distribution<float> uniform(-1, 1);
+    RNG rng(23451334);
+    int spp = 8;
 
     Film film {192 * 4, 108 * 4};
     Camera camera {film, {-3.6, 0, 0}, {0, 0, 0}, 45};
@@ -42,11 +43,11 @@ int main() {
     scene.add_shape_instance(sphere, {{1, 1, 1}, true}, {3, 0.5, -2});
     scene.add_shape_instance(plane, {RGB(120, 204, 157)}, {0, -0.5, 0});
 
-    int spp = 8;
+    Progress progress(film.getWidth() * film.getHeight() * spp);
 
     thread_pool.parallel_for(film.getWidth(), film.getHeight(), [&](int x, int y) {
         for (int i = 0; i < spp; i++) {
-            auto ray = camera.generateRay({x, y}, {abs(uniform(gen)), abs(uniform(gen))});
+            auto ray = camera.generateRay({x, y}, {rng.uniform(), rng.uniform()});
             glm::vec3 beta = {1, 1, 1}; // 总反照率
             glm::vec3 color = {0, 0, 0};
     
@@ -71,7 +72,8 @@ int main() {
                         // 漫反射
                         // 生成一个采样点
                         do {
-                            light_dircetion = {uniform(gen), uniform(gen), uniform(gen)};
+                            light_dircetion = {rng.uniform(), rng.uniform(), rng.uniform()};
+                            light_dircetion = light_dircetion * 2.f - 1.f;
                         } while (glm::length(light_dircetion) > 1);
     
                         // 反射光线为半球方向
@@ -97,10 +99,7 @@ int main() {
         // }
 
         // 进度条
-        int n = ++count;
-        if (n % film.getWidth() == 0) {
-            std::cout << static_cast<float>(count) / (film.getWidth() * film.getHeight()) << std::endl;
-        }
+        progress.update(spp);
     });
     thread_pool.wait();
 

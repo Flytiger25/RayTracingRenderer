@@ -31,5 +31,5 @@ private:
     std::vector<std::thread> threads;
     std::queue<Task *> tasks;
     //std::mutex lock;
-    Spinlock spin_lock {};
+    SpinLock spin_lock {};
 };

@@ -1,4 +1,4 @@
-#include "triangle.hpp"
+#include "shape/triangle.hpp"
 
 std::optional<HitInfo> Triangle::intersect(const Ray &ray, float t_min, float t_max) const {
     // o + td = (1 - u - v)p0 + up1 + vp2 
