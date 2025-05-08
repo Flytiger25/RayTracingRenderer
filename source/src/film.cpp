@@ -1,4 +1,5 @@
 #include "film.hpp"
+#include "rgb.hpp"
 #include <fstream>
 
 Film::Film(int width, int height) : width(width), height(height) {
@@ -11,10 +12,9 @@ void Film::save(const std::filesystem::path &fileName) {
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            const glm::vec3 &color = getPixel(x, y);
-            glm::ivec3 color_i = glm::clamp(color * 255.f, 0.f, 255.f);
-            //file << (color_i.x) << ' ' << (color_i.y) << ' ' << (color_i.z) << '\n';
-            file << static_cast<uint8_t>(color_i.x) << static_cast<uint8_t>(color_i.y) << static_cast<uint8_t>(color_i.z);
+            auto pixel = getPixel(x, y);
+            RGB rgb(pixel.color / static_cast<float>(pixel.sample_count));
+            file << static_cast<uint8_t>(rgb.get_r()) << static_cast<uint8_t>(rgb.get_g()) << static_cast<uint8_t>(rgb.get_b());
         }
     }
 }

@@ -1,5 +1,6 @@
 #include <chrono>
 #include <iostream>
+#include <random>
 #include <glm/glm.hpp>
 #include "thread_pool.hpp"
 #include "film.hpp"
@@ -8,6 +9,8 @@
 #include "model.hpp"
 #include "plane.hpp"
 #include "scene.hpp"
+#include "frame.hpp"
+#include "rgb.hpp"
 
 class SimpleTask : public Task {
 public:
@@ -18,31 +21,82 @@ public:
 
 int main() {
 
-    ThreadPool thread_pool;
+    ThreadPool thread_pool {};
     std::atomic<int> count = 0;
 
-    Film film {1920, 1080};
-    Camera camera {film, {-1.5, 0, 0}, {0, 0, 0}, 90};
-    glm::vec3 light_pos {-1, 2, 1};
+    std::mt19937 gen(23451334);
+    std::uniform_real_distribution<float> uniform(-1, 1);
+
+    Film film {192 * 4, 108 * 4};
+    Camera camera {film, {-3.6, 0, 0}, {0, 0, 0}, 45};
+    //glm::vec3 light_pos {-1, 2, 1};
 
     Model model ("models/simple_dragon.obj");
-    Sphere sphere {{0, 0, 0}, 0.5f};
+    Sphere sphere {{0, 0, 0}, 1.f};
     Plane plane {{0, 0, 0}, {0, 1, 0}};
-    //Shape &shape = plane;
+
     Scene scene {};
-    scene.add_shape_instance(&model, {0, 0, 0}, {1, 3, 2});
-    scene.add_shape_instance(&sphere, {0, 0, 1.5}, {0.3, 0.3, 0.3});
-    scene.add_shape_instance(&plane, {0, -0.5, 0});
+    scene.add_shape_instance(model, {RGB(202, 159, 117)}, {0, 0, 0}, {1, 3, 2});
+    scene.add_shape_instance(sphere, {{1, 1, 1}, false, RGB{255, 128, 128}}, {0, 0, 2.5});
+    scene.add_shape_instance(sphere, {{1, 1, 1}, false, RGB{128, 128, 255}}, {0, 0, -2.5});
+    scene.add_shape_instance(sphere, {{1, 1, 1}, true}, {3, 0.5, -2});
+    scene.add_shape_instance(plane, {RGB(120, 204, 157)}, {0, -0.5, 0});
+
+    int spp = 8;
 
     thread_pool.parallel_for(film.getWidth(), film.getHeight(), [&](int x, int y) {
-        auto ray = camera.generateRay({x, y});
-        auto hit_info = scene.intersect(ray);
-        if (hit_info.has_value()) {
-            auto light_direction = glm::normalize(light_pos - hit_info->hit_point);
-            float cosine = glm::max(0.f, glm::dot(hit_info->normal, light_direction));
-
-            film.setPixel(x, y, {cosine, cosine, cosine});
+        for (int i = 0; i < spp; i++) {
+            auto ray = camera.generateRay({x, y}, {abs(uniform(gen)), abs(uniform(gen))});
+            glm::vec3 beta = {1, 1, 1}; // 总反照率
+            glm::vec3 color = {0, 0, 0};
+    
+            // 反射
+            while (true) {
+                auto hit_info = scene.intersect(ray);
+                if (hit_info.has_value()) {
+                    color += beta * hit_info->material->emissive;
+                    beta *= hit_info->material->albedo;
+    
+                    // 反射光线起点为交点
+                    ray.origin = hit_info->hit_point;
+    
+                    // 反射方向考虑镜面反射和漫反射
+                    Frame frame(hit_info->normal); // 转换为局部坐标
+                    glm::vec3 light_dircetion;
+                    if (hit_info->material->is_specular) {
+                        // 镜面反射
+                        glm::vec3 view_direction = frame.local_from_world(-ray.direction);
+                        light_dircetion = {-view_direction.x, view_direction.y, -view_direction.z};
+                    } else {
+                        // 漫反射
+                        // 生成一个采样点
+                        do {
+                            light_dircetion = {uniform(gen), uniform(gen), uniform(gen)};
+                        } while (glm::length(light_dircetion) > 1);
+    
+                        // 反射光线为半球方向
+                        if (light_dircetion.y < 0) {
+                            light_dircetion.y = -light_dircetion.y;
+                        }
+                    }
+                    ray.direction = frame.world_from_local(light_dircetion);
+                } else {
+                    break;
+                }
+            }
+    
+            film.addSample(x, y, color);
         }
+
+        // auto hit_info = scene.intersect(ray);
+        // if (hit_info.has_value()) {
+        //     auto light_direction = glm::normalize(light_pos - hit_info->hit_point);
+        //     float cosine = glm::max(0.f, glm::dot(hit_info->normal, light_direction));
+
+        //     film.setPixel(x, y, {cosine, cosine, cosine});
+        // }
+
+        // 进度条
         int n = ++count;
         if (n % film.getWidth() == 0) {
             std::cout << static_cast<float>(count) / (film.getWidth() * film.getHeight()) << std::endl;
