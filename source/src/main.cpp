@@ -29,7 +29,7 @@ int main() {
     RNG rng(23451334);
     int spp = 128;
 
-    Film film {192 * 4, 108 * 4};
+    Film film {1920, 1080};
     Camera camera {film, {-3.6, 0, 0}, {0, 0, 0}, 45};
     //glm::vec3 light_pos {-1, 2, 1};
 
