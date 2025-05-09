@@ -20,7 +20,7 @@ void BaseRenderer::render(int spp, const std::filesystem::path& filename) {
 
         // 保存当前spp的图像
         current_spp += increase;
-        increase = std::min(current_spp, 32);
+        increase = std::min(current_spp, 128);
 
         film.save(filename);
         std::cout << "save " << current_spp << " spp"  << " to " << filename << std::endl;

@@ -43,10 +43,14 @@ Model::Model(const std::filesystem::path &fileName) {
             triangles.push_back(triangle);
         }
     }
-    
+    build();
 }
 
 std::optional<HitInfo> Model::intersect(const Ray &ray, float t_min, float t_max) const {
+    if (!aabb.has_intersection(ray, t_min, t_max)) {
+        return {};
+    }
+    
     std::optional<HitInfo> closest_hit_info {};
 
     for (const auto &triangle : triangles) {
@@ -58,4 +62,11 @@ std::optional<HitInfo> Model::intersect(const Ray &ray, float t_min, float t_max
     }
 
     return closest_hit_info;
+}
+void Model::build() {
+    for (const auto &triangle : triangles) {
+        aabb.expand(triangle.p0);
+        aabb.expand(triangle.p1);
+        aabb.expand(triangle.p2);
+    }
 }

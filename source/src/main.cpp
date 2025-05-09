@@ -44,8 +44,8 @@ int main() {
     scene.add_shape_instance(sphere, {{1, 1, 1}, true}, {3, 0.5, -2});
     scene.add_shape_instance(plane, {RGB(120, 204, 157)}, {0, -0.5, 0});
 
-    NormalRenderer normal_renderer {camera, scene};
-    normal_renderer.render(spp, "D:\\work\\RayTracingRenderer\\normal.ppm");
+    // NormalRenderer normal_renderer {camera, scene};
+    // normal_renderer.render(spp, "D:\\work\\RayTracingRenderer\\normal.ppm");
 
     film.clear();
 
