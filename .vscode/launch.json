@@ -8,9 +8,17 @@
             "name": "Debug",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/source/RayTracingRenderer",
+            "program": "${workspaceFolder}/build/source/Debug/RayTracingRenderer.exe",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Release",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/source/Release/RayTracingRenderer.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
