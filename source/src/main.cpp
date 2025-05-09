@@ -33,7 +33,7 @@ int main() {
     Camera camera {film, {-3.6, 0, 0}, {0, 0, 0}, 45};
     //glm::vec3 light_pos {-1, 2, 1};
 
-    Model model ("D:\\work\\RayTracingRenderer\\models\\simple_dragon.obj");
+    Model model ("D:\\work\\RayTracingRenderer\\models\\dragon_87k.obj");
     Sphere sphere {{0, 0, 0}, 1.f};
     Plane plane {{0, 0, 0}, {0, 1, 0}};
 
@@ -44,8 +44,8 @@ int main() {
     scene.add_shape_instance(sphere, {{1, 1, 1}, true}, {3, 0.5, -2});
     scene.add_shape_instance(plane, {RGB(120, 204, 157)}, {0, -0.5, 0});
 
-    // NormalRenderer normal_renderer {camera, scene};
-    // normal_renderer.render(spp, "D:\\work\\RayTracingRenderer\\normal.ppm");
+    NormalRenderer normal_renderer {camera, scene};
+    normal_renderer.render(spp, "D:\\work\\RayTracingRenderer\\normal.ppm");
 
     film.clear();
 

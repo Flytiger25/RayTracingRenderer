@@ -7,6 +7,8 @@ Model::Model(const std::filesystem::path &fileName) {
     std::vector<glm::vec3> positions;
     std::vector<glm::vec3> normals;
 
+    std::vector<Triangle> triangles;
+
     std::ifstream file(fileName);
     if (!file) {
         std::cout << "file open fail!" << std::endl;
@@ -43,30 +45,33 @@ Model::Model(const std::filesystem::path &fileName) {
             triangles.push_back(triangle);
         }
     }
-    build();
+    bvh.build(std::move(triangles));
 }
 
 std::optional<HitInfo> Model::intersect(const Ray &ray, float t_min, float t_max) const {
-    if (!aabb.has_intersection(ray, t_min, t_max)) {
-        return {};
-    }
+    return bvh.intersect(ray, t_min, t_max);
+
+    // if (!aabb.has_intersection(ray, t_min, t_max)) {
+    //     return {};
+    // }
     
-    std::optional<HitInfo> closest_hit_info {};
+    // std::optional<HitInfo> closest_hit_info {};
 
-    for (const auto &triangle : triangles) {
-        auto hit_info = triangle.intersect(ray, t_min, t_max);
-        if (hit_info.has_value()) {
-            t_max = hit_info->t;
-            closest_hit_info = hit_info;
-        }
-    }
+    // for (const auto &triangle : triangles) {
+    //     auto hit_info = triangle.intersect(ray, t_min, t_max);
+    //     if (hit_info.has_value()) {
+    //         t_max = hit_info->t;
+    //         closest_hit_info = hit_info;
+    //     }
+    // }
 
-    return closest_hit_info;
+    // return closest_hit_info;
 }
-void Model::build() {
-    for (const auto &triangle : triangles) {
-        aabb.expand(triangle.p0);
-        aabb.expand(triangle.p1);
-        aabb.expand(triangle.p2);
-    }
-}
+
+// void Model::build() {
+//     for (const auto &triangle : triangles) {
+//         aabb.expand(triangle.p0);
+//         aabb.expand(triangle.p1);
+//         aabb.expand(triangle.p2);
+//     }
+// }

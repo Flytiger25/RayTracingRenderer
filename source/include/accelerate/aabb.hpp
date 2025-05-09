@@ -15,6 +15,10 @@ struct AABB {
 
     bool has_intersection(const Ray &ray, float &t_min, float &t_max) const;
 
+    glm::vec3 get_diagonal() const {
+        return b_max - b_min;
+    }
+
     glm::vec3 b_min;
     glm::vec3 b_max;
 };
