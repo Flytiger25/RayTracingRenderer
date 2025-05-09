@@ -1,6 +1,6 @@
 #pragma once
 
-#include "accelerate/aabb.hpp""
+#include "accelerate/aabb.hpp"
 #include "shape/triangle.hpp"
 #include "shape/shape.hpp"
 
